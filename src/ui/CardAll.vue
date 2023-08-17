@@ -8,7 +8,7 @@
 export default {};
 </script>
 
-<style>
+<style lang="scss">
 .card {
   width: 250px;
   height: 150px;
@@ -18,5 +18,10 @@ export default {};
   border-spacing: 10px 0em;
   margin-bottom: 5px;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    width: 200px;
+    height: 100px;
+  }
 }
 </style>

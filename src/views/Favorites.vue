@@ -30,7 +30,9 @@ export default {
 </script>
 <style scoped lang='scss'>
 @import "../scss/main.scss";
+
 .card-container-scroll {
   @include flexBox(flex-start, center, row);
+  flex-wrap: wrap;
 }
 </style>
