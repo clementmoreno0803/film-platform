@@ -67,13 +67,18 @@ export const useHomeStore = defineStore("homeStore", {
                 console.log(error);
             }
         },
+        //Filtrer les films préférés au click 
         async toggleFav(show_id) {
             const showFav = this.home.find((obj) => obj.show_id == show_id);
             showFav.isFav = !showFav.isFav;
-            await axios.put(
-                `https://netflix-af578-default-rtdb.firebaseio.com/${show_id}.json`,
-                showFav
-            );
+            try {
+                await axios.put(
+                    `https://netflix-af578-default-rtdb.firebaseio.com/${show_id}.json`,
+                    showFav
+                )
+            } catch (error) {
+                console.log(error);
+            }
         },
     },
 });
